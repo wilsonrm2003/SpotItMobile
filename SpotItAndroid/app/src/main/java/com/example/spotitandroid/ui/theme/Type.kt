@@ -1,6 +1,10 @@
 package com.example.spotitandroid.ui.theme
 
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.Typography
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -32,3 +36,28 @@ val Typography = Typography(
     )
     */
 )
+
+@Composable
+fun rachaelsFontStyle(
+    size: Int = 16,
+    color: Color = RachaelsPink,
+    weight: FontWeight = FontWeight.Bold
+    ): TextStyle {
+    return TextStyle(
+        fontSize = size.sp,
+        fontFamily = FontFamily.Serif,
+        color = color,
+        fontWeight = weight
+    )
+}
+
+@Composable
+fun rachaelsFontStyleMode(size: Int = 16): TextStyle {
+    val isDark = isSystemInDarkTheme()
+
+    return TextStyle(
+        fontSize = size.sp,
+        fontFamily = FontFamily.Serif,
+        color = if (isDark) RachaelsPink else RachaelsRed
+    )
+}
