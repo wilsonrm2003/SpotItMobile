@@ -58,6 +58,7 @@ fun rachaelsFontStyleMode(size: Int = 16): TextStyle {
     return TextStyle(
         fontSize = size.sp,
         fontFamily = FontFamily.Serif,
-        color = if (isDark) RachaelsPink else RachaelsRed
+        color = if (isDark) RachaelsPink else RachaelsRed,
+        fontWeight = FontWeight.ExtraBold
     )
 }
